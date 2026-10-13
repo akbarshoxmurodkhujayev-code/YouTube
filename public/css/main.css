@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+}
+
+:root {
+  --bg-primary: #0f0f0f;
+  --bg-hover: #272727;
+  --bg-elevated: #212121;
+  --bg-input: #121212;
+  --border-color: #303030;
+  --text-primary: #ffffff;
+  --text-secondary: #aaaaaa;
+  --accent-red: #ff0000;
+  --accent-blue: #3ea6ff;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-xl: 24px;
+  --header-height: 56px;
+  --sidebar-width: 240px;
+  --sidebar-collapsed: 72px;
+  --mobile-nav-height: 56px;
+  --transition: 0.2s ease;
+}
+
+html, body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+.content {
+  margin-left: var(--sidebar-width);
+  padding: 24px;
+  padding-top: calc(var(--header-height) + 24px);
+  width: calc(100% - var(--sidebar-width));
+  min-height: 100vh;
+  transition: margin-left var(--transition), width var(--transition);
+}
+
+body.sidebar-collapsed .content {
+  margin-left: var(--sidebar-collapsed);
+  width: calc(100% - var(--sidebar-collapsed));
+}
+
+body.shorts-mode .content {
+  padding: 0;
+  margin-left: 0;
+  width: 100%;
+  padding-top: var(--header-height);
+  background: #000;
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background-color: var(--border-color); border-radius: 4px; }
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition);
+}
+
+.icon-btn:hover { background-color: var(--bg-hover); }
+
+.divider {
+  height: 1px;
+  background-color: var(--border-color);
+  margin: 12px 0;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  color: var(--text-secondary);
+  gap: 16px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--border-color);
+  border-top-color: var(--accent-red);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.error-message {
+  text-align: center;
+  padding: 80px 20px;
+  color: #ff6b6b;
+}
+
+.error-message h2 { margin-bottom: 12px; font-size: 22px; }
+.error-message p { color: var(--text-secondary); font-size: 14px; }
+
+/* ============ SHORTS MODE ============ */
+body.shorts-mode .content {
+  padding: 0;
+  margin-left: 0;
+  width: 100%;
+  padding-top: var(--header-height);
+  background: #000;
+}

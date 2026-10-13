@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0f0f0f">
+  <title>YouTube Clone</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/video-card.css">
+  <link rel="stylesheet" href="css/video-page.css">
+  <link rel="stylesheet" href="css/shorts.css">
+  <link rel="stylesheet" href="css/mobile-nav.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__left">
+      <button class="icon-btn" id="menuBtn">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+          <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/>
+        </svg>
+      </button>
+      <a href="#/" class="logo" id="logoBtn">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="#ff0000">
+          <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8z"/>
+          <path d="M9.5 15.5v-7l6 3.5-6 3.5z" fill="#fff"/>
+        </svg>
+        <span class="logo__text">YouTube</span>
+      </a>
+    </div>
+
+    <div class="header__center">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Qidirish..." autocomplete="off">
+        <button class="search-box__btn" id="searchBtn">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+            <path d="M15.5 14h-.8l-.3-.3a6.5 6.5 0 1 0-.7.7l.3.3v.8l5 5 1.5-1.5-5-5zm-6 0a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="header__right">
+      <div class="avatar">U</div>
+    </div>
+  </header>
+
+  <aside class="sidebar" id="sidebar">
+    <nav class="sidebar__nav">
+      <a href="#/" class="nav-item active" data-page="home">
+        <span class="nav-item__icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+        </span>
+        <span class="nav-item__text">Bosh sahifa</span>
+      </a>
+      <a href="#/shorts" class="nav-item" data-page="shorts">
+        <span class="nav-item__icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M10 14.65v-5.3L15 12l-5 2.65zm7.77-4.33-1.2-.5L18 9.06c1.84-.96 2.53-3.23 1.56-5.06s-3.24-2.53-5.07-1.56L6 6.94c-1.29.68-2.07 2.04-2 3.49.07 1.42.93 2.67 2.22 3.25.03.01 1.2.5 1.2.5L6 14.93c-1.83.97-2.53 3.24-1.56 5.07.97 1.83 3.24 2.53 5.07 1.56l8.5-4.5c1.29-.68 2.06-2.04 1.99-3.49-.07-1.42-.94-2.68-2.23-3.25z"/></svg>
+        </span>
+        <span class="nav-item__text">Shorts</span>
+      </a>
+      <a href="#/music" class="nav-item" data-query="music">
+        <span class="nav-item__icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 3v10.5A3.5 3.5 0 1 0 14 17V7h4V3h-6z"/></svg>
+        </span>
+        <span class="nav-item__text">Musiqa</span>
+      </a>
+      <a href="#/gaming" class="nav-item" data-query="gaming">
+        <span class="nav-item__icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M21.6 6.9c-.4-1.4-1.5-2.4-2.9-2.6C15.9 3.9 12 3.9 12 3.9s-3.9 0-6.7.4c-1.4.2-2.5 1.2-2.9 2.6C2 9.2 2 12 2 12s0 2.8.4 5.1c.4 1.4 1.5 2.4 2.9 2.6 2.8.4 6.7.4 6.7.4s3.9 0 6.7-.4c1.4-.2 2.5-1.2 2.9-2.6.4-2.3.4-5.1.4-5.1s0-2.8-.4-5.1zM10 15V9l5 3-5 3z"/></svg>
+        </span>
+        <span class="nav-item__text">O'yinlar</span>
+      </a>
+      <a href="#/news" class="nav-item" data-query="news">
+        <span class="nav-item__icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zm-2 14H6v-2h12v2zm0-4H6v-2h12v2zm0-4H6V7h12v2z"/></svg>
+        </span>
+        <span class="nav-item__text">Yangiliklar</span>
+      </a>
+    </nav>
+  </aside>
+
+  <main class="content" id="content">
+    <div class="loading">
+      <div class="spinner"></div>
+      <p>Yuklanmoqda...</p>
+    </div>
+  </main>
+
+  <nav class="mobile-nav">
+    <a href="#/" class="mobile-nav__item active" data-page="home">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+      <span>Bosh</span>
+    </a>
+    <a href="#/shorts" class="mobile-nav__item" data-page="shorts">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M10 14.65v-5.3L15 12l-5 2.65zm7.77-4.33-1.2-.5L18 9.06c1.84-.96 2.53-3.23 1.56-5.06s-3.24-2.53-5.07-1.56L6 6.94c-1.29.68-2.07 2.04-2 3.49.07 1.42.93 2.67 2.22 3.25.03.01 1.2.5 1.2.5L6 14.93c-1.83.97-2.53 3.24-1.56 5.07.97 1.83 3.24 2.53 5.07 1.56l8.5-4.5c1.29-.68 2.06-2.04 1.99-3.49-.07-1.42-.94-2.68-2.23-3.25z"/></svg>
+      <span>Shorts</span>
+    </a>
+    <a href="#/music" class="mobile-nav__item" data-query="music">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 3v10.5A3.5 3.5 0 1 0 14 17V7h4V3h-6z"/></svg>
+      <span>Musiqa</span>
+    </a>
+    <a href="#/library" class="mobile-nav__item" data-page="library">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2zm-4 4H9v-2h6v2zm4-8H9V5h10v2z"/></svg>
+      <span>Kutubxona</span>
+    </a>
+  </nav>
+
+<script src="js/config.js"></script>
+<script src="js/storage.js"></script>   <!-- YANGI -->
+<script src="js/api.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/video-page.js"></script>
+<script src="js/shorts.js"></script>
+<script src="js/router.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
